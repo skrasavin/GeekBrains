@@ -1,0 +1,36 @@
+<html>
+<head>
+    <title>ham price</title>
+    <meta charset="utf-8">
+    <script src="Hamburger.js"></script>
+    <link href="hamCss.css" rel="stylesheet">
+    <script>
+        window.onload = function () {
+
+            var hamFit = new Hamburger();
+
+            let doc = document.getElementById("city");
+            doc.innerHTML = hamFit.addTopping();
+            console.log(doc);
+        }
+    </script>
+</head>
+<body>
+<div class="container">
+    <input class="smallHumButton toppingButton" type="checkbox"><span class="inputText smallHumText">Hamburger-S</span>
+    <input class="bigHumButton toppingButton" type="checkbox"><span class="inputText bigHumText">Hamburger-XL</span>
+    <input class="cheeseButton toppingButton" type="checkbox"><span class="inputText cheeseText">cheese</span>
+    <span class="info textInfo">(+ 10 рублей, + 20 калорий)</span>
+    <input class="saladButton toppingButton" type="checkbox"><span class="inputText saladText">salad</span>
+    <span class="info textInfo2">(+ 20 рублей, + 5 калорий)</span>
+    <input class="potatoButton toppingButton" type="checkbox"><span class="inputText potatoText">potato</span>
+    <span class="info textInfo3">(+ 15 рублей, + 10 калорий)</span>
+    <input class="spiceButton toppingButton" type="checkbox"><span class="inputText spiceText">spice</span>
+    <span class="info textInfo4">(+ 15 рублей, 0 калорий)</span>
+    <input class="mayoButton toppingButton" type="checkbox"><span class="inputText mayoText">mayo</span>
+    <span class="info textInfo5">(+ 20 рублей, + 5 калорий)</span>
+    <span class="sum">Total Amount: </span><span id="city" class="totalAmount"></span>
+    <span class="calories">Calories:</span>
+</div>
+</body>
+</html>
