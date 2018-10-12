@@ -6,19 +6,26 @@
     <link href="hamCss.css" rel="stylesheet">
     <script>
         window.onload = function () {
+            let ham = new Hamburger();
+            let smallHam = document.getElementById("shm");
+            let totalCost = document.getElementById("totalSum");
 
-            var hamFit = new Hamburger();
 
-            let doc = document.getElementById("city");
-            doc.innerHTML = hamFit.addTopping();
-            console.log(doc);
+//            smallHam.addEventListener("click", () => ham.smallSizePrice());
+
+//            ham.smallSizePrice();
+
+
+            totalCost.innerHTML = ham.getTotalCost();
+
+
         }
     </script>
 </head>
 <body>
 <div class="container">
-    <input class="smallHumButton toppingButton" type="checkbox"><span class="inputText smallHumText">Hamburger-S</span>
-    <input class="bigHumButton toppingButton" type="checkbox"><span class="inputText bigHumText">Hamburger-XL</span>
+    <input id = "shm" class="smallHumButton toppingButton" type="checkbox"><span class="inputText smallHumText">Hamburger-S</span>
+    <input id = "bhm" class="bigHumButton toppingButton" type="checkbox"><span class="inputText bigHumText">Hamburger-XL</span>
     <input class="cheeseButton toppingButton" type="checkbox"><span class="inputText cheeseText">cheese</span>
     <span class="info textInfo">(+ 10 рублей, + 20 калорий)</span>
     <input class="saladButton toppingButton" type="checkbox"><span class="inputText saladText">salad</span>
@@ -29,7 +36,7 @@
     <span class="info textInfo4">(+ 15 рублей, 0 калорий)</span>
     <input class="mayoButton toppingButton" type="checkbox"><span class="inputText mayoText">mayo</span>
     <span class="info textInfo5">(+ 20 рублей, + 5 калорий)</span>
-    <span class="sum">Total Amount: </span><span id="city" class="totalAmount"></span>
+    <span class="sum">Total Amount: </span><span id="totalSum" class="totalAmount"></span>
     <span class="calories">Calories:</span>
 </div>
 </body>

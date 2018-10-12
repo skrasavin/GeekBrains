@@ -5,7 +5,7 @@ body {
 .container {
     position: relative;
     width: 500px;
-    height: 371px;
+    height: 400px;
     /* background: cadetblue; */
     margin-left: 30%;
     background-image: url(ham.jpg);
