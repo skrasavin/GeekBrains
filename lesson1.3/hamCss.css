@@ -139,3 +139,10 @@ body {
     top: 278px;
     left: 231px;
 }
+.totalCalories {
+    color: white;
+    font-size: 25px;
+    position: absolute;
+    top: 311px;
+    left: 176px;
+}

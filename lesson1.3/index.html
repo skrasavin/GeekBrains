@@ -8,36 +8,103 @@
         window.onload = function () {
             let ham = new Hamburger();
             let smallHam = document.getElementById("shm");
+            let bigHam = document.getElementById("bhm");
+            let cheeseTopping = document.getElementById("cheesetop");
+            let saladTopping = document.getElementById("saladtop");
+            let potatoTopping = document.getElementById("potatotop");
+            let spiceTopping = document.getElementById("spicetop");
+            let mayoTopping = document.getElementById("mayotop")
+
+            let totalCalory = document.getElementById("totalCal")
             let totalCost = document.getElementById("totalSum");
 
+            smallHam.onclick = () => {
+                if (smallHam.checked) {
+                    ham.smallSizePrice();
 
-//            smallHam.addEventListener("click", () => ham.smallSizePrice());
+                } else {
+                    ham.removeValueFromSmallSize();
+                }
+                totalCost.innerHTML = ham.getTotalCost();
+                totalCalory.innerHTML = ham.getTotalCalory();
+            };
 
-//            ham.smallSizePrice();
-
-
-            totalCost.innerHTML = ham.getTotalCost();
-
-
+            bigHam.onclick = () => {
+                if (bigHam.checked) {
+                    ham.bigSizePrice();
+                } else {
+                    ham.removeValueFromBigSize();
+                }
+                totalCost.innerHTML = ham.getTotalCost();
+                totalCalory.innerHTML = ham.getTotalCalory();
+            };
+            cheeseTopping.onclick = () => {
+                if (cheeseTopping.checked) {
+                    ham.addCheeseTopping();
+                } else {
+                    ham.removeValueFromCheeseTopping();
+                }
+                totalCost.innerHTML = ham.getTotalCost();
+                totalCalory.innerHTML = ham.getTotalCalory();
+            };
+            saladTopping.onclick = () => {
+                if (saladTopping.checked) {
+                    ham.addSaladTopping();
+                } else {
+                    ham.removeValueFromSaladTopping();
+                }
+                totalCost.innerHTML = ham.getTotalCost();
+                totalCalory.innerHTML = ham.getTotalCalory();
+            };
+            potatoTopping.onclick = () => {
+                if (potatoTopping.checked) {
+                    ham.addPotatoTopping();
+                } else {
+                    ham.removeValueFromPotatoTopping();
+                }
+                totalCost.innerHTML = ham.getTotalCost();
+                totalCalory.innerHTML = ham.getTotalCalory();
+            };
+            spiceTopping.onclick = () => {
+                if (spiceTopping.checked) {
+                    ham.addSpiceTopping();
+                } else {
+                    ham.removeValueFromSpiceTopping();
+                }
+                totalCost.innerHTML = ham.getTotalCost();
+                totalCalory.innerHTML = ham.getTotalCalory();
+            };
+            mayoTopping.onclick = () => {
+                if (mayoTopping.checked) {
+                    ham.addMayoTopping();
+                } else {
+                    ham.removeValueFromMayoTopping();
+                }
+                totalCost.innerHTML = ham.getTotalCost();
+                totalCalory.innerHTML = ham.getTotalCalory();
+            };
         }
     </script>
 </head>
 <body>
 <div class="container">
-    <input id = "shm" class="smallHumButton toppingButton" type="checkbox"><span class="inputText smallHumText">Hamburger-S</span>
-    <input id = "bhm" class="bigHumButton toppingButton" type="checkbox"><span class="inputText bigHumText">Hamburger-XL</span>
-    <input class="cheeseButton toppingButton" type="checkbox"><span class="inputText cheeseText">cheese</span>
+    <input id="shm" class="smallHumButton toppingButton" type="checkbox"><span class="inputText smallHumText">Hamburger-S</span>
+    <input id="bhm" class="bigHumButton toppingButton" type="checkbox"><span
+        class="inputText bigHumText">Hamburger-XL</span>
+    <input id="cheesetop" class="cheeseButton toppingButton" type="checkbox"><span
+        class="inputText cheeseText">cheese</span>
     <span class="info textInfo">(+ 10 рублей, + 20 калорий)</span>
-    <input class="saladButton toppingButton" type="checkbox"><span class="inputText saladText">salad</span>
+    <input id="saladtop" class="saladButton toppingButton" type="checkbox"><span
+        class="inputText saladText">salad</span>
     <span class="info textInfo2">(+ 20 рублей, + 5 калорий)</span>
-    <input class="potatoButton toppingButton" type="checkbox"><span class="inputText potatoText">potato</span>
+    <input id="potatotop" class="potatoButton toppingButton" type="checkbox"><span class="inputText potatoText">potato</span>
     <span class="info textInfo3">(+ 15 рублей, + 10 калорий)</span>
-    <input class="spiceButton toppingButton" type="checkbox"><span class="inputText spiceText">spice</span>
+    <input id="spicetop" class="spiceButton toppingButton" type="checkbox"><span class="inputText spiceText">spice</span>
     <span class="info textInfo4">(+ 15 рублей, 0 калорий)</span>
-    <input class="mayoButton toppingButton" type="checkbox"><span class="inputText mayoText">mayo</span>
+    <input id="mayotop" class="mayoButton toppingButton" type="checkbox"><span class="inputText mayoText">mayo</span>
     <span class="info textInfo5">(+ 20 рублей, + 5 калорий)</span>
     <span class="sum">Total Amount: </span><span id="totalSum" class="totalAmount"></span>
-    <span class="calories">Calories:</span>
+    <span class="calories">Calories:</span><span id="totalCal" class="totalCalories"></span>
 </div>
 </body>
 </html>
