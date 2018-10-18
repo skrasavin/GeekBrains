@@ -1,0 +1,27 @@
+<html>
+<head>
+    <title>Menu</title>
+    <script src="menu.js"></script>
+    <script>
+        window.onload = function () {
+            var items = [
+                new MenuItem("http://google.ru", "Home"),
+                new MenuItem("http://google.ru", "News"),
+                new MenuItem("http://google.ru", "Blog"),
+                new SubMenu("childMenu", "childMenu", [
+                    new MenuItem("http://google.ru", "Home"),
+                    new MenuItem("http://google.ru", "News"),
+                    new MenuItem("http://google.ru", "Blog")
+                ], "Child Menu", "http://google.ru"),
+            ]
+
+            var menu = new SubMenu('menu', 'menu', items);
+            document.body.appendChild(menu.render());
+
+        }
+    </script>
+</head>
+<body>
+    <div id="wrapper"></div>
+</body>
+</html>

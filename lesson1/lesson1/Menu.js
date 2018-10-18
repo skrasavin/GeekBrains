@@ -34,9 +34,6 @@ Menu.prototype.render = function () {
 
     return ul;
 }
-Menu.prototype.delete = function (el) {
-    document.body.removeChild(el);
-}
 
 function MenuItem(className, title, href) {
     Container.call(this, null, className, 'li');
@@ -58,8 +55,20 @@ MenuItem.prototype.render = function () {
     return li;
 }
 
-function SubMenu(id, className, items) {
-    this.items = items;
+function SubMenu(id, className, items, title, href) {
+    Menu.call(this, id, className, items);
+    this.title = title;
+    this.href = href;
 }
 
 SubMenu.prototype = Object.create(Menu.prototype);
+
+SubMenu.prototype.render = function () {
+    if(this.title && this.href) {
+        var menuItem = new MenuItem(this.href, this.title).render();
+        menuItem.appendChild(Menu.prototype.render.call(this));
+        return menuItem;
+    }else {
+        return Menu.prototype.render.call(this);
+    }
+}

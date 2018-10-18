@@ -1,0 +1,41 @@
+<html>
+<head>
+    <title>Menu</title>
+    <script src="menu.js"></script>
+    <script>
+        window.onload = function () {
+            var items = [
+                new MenuItem("/", "Hats"),
+                new SubMenu("childMenu", "childMenu", [
+                    new MenuItem("/", "Jacket"),
+                    new MenuItem("/", "Parka"),
+                    new MenuItem("/", "Bomber Jacket"),
+                    new SubMenu("childMenu", "childMenu", [
+                        new MenuItem("/", "Polo"),
+                        new MenuItem("/", "Monotonous color"),
+                        new MenuItem("/", "Print"),
+                    ], "T-shirt", "/"),
+                ], "Outwear", "/"),
+                new SubMenu("childMenu", "childMenu", [
+                    new MenuItem("/", "Jeans"),
+                    new MenuItem("/", "Chino"),
+                    new MenuItem("/", "Cargo"),
+                ], "Pants", "/"),
+                new MenuItem("/", "Backpack"),
+                new SubMenu("childMenu", "childMenu", [
+                    new MenuItem("/", "Sneakers"),
+                    new MenuItem("/", "Berets"),
+                    new MenuItem("/", "Shoes")
+                ], "Footwear", "/"),
+            ]
+
+            var menu = new SubMenu('menu', 'menu', items);
+            document.body.appendChild(menu.render());
+
+        }
+    </script>
+</head>
+<body>
+    <div id="wrapper"></div>
+</body>
+</html>
