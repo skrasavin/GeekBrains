@@ -1,0 +1,52 @@
+<html>
+<head>
+    <meta charset="utf-8" lang="ru">
+    <title>Menu</title>
+    <script src="test.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script>
+
+        $(document).ready(function() {
+
+            $(".firstTag").click(function () {
+                $(".navContent").html("Локаята принимает во внимание онтологический закон исключённого третьего," +
+                    " открывая новые горизонты. Идеи гедонизма занимают центральное место в утилитаризме Милля и" +
+                    " Бентама, однако гегельянство поразительно. Отношение к современности амбивалентно творит " +
+                    "интеллект, изменяя привычную реальность.");
+            });
+            $(".secondTag").click(function () {
+                $(".navContent").html("Априори, закон внешнего мира принимает во внимание " +
+                    "естественный гедонизм, ломая рамки привычных представлений. Концепция " +
+                    "реально творит гедонизм, учитывая опасность, которую представляли собой писания " +
+                    "Дюринга для не окрепшего еще немецкого рабочего движения.");
+            });
+            $(".thirdTag").click(function () {
+                $(".navContent").html("Сомнение, по определению, непредвзято заполняет знак, изменяя" +
+                    " привычную реальность. Современная ситуация, следовательно, подрывает трагический смысл" +
+                    " жизни, однако Зигварт считал критерием истинности необходимость и общезначимость, для которых" +
+                    " нет никакой опоры в объективном мире. Гносеология категорически порождает и обеспечивает " +
+                    "непредвиденный смысл жизни, отрицая очевидное.");
+            });
+
+
+        });
+
+    </script>
+</head>
+<body>
+<nav>
+    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+        <a class="nav-item nav-link active firstTag" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Home</a>
+        <a class="nav-item nav-link secondTag" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Profile</a>
+        <a class="nav-item nav-link thirdTag" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Contact</a>
+    </div>
+</nav>
+<div class="navContent" style="width: 700px">
+    Локаята принимает во внимание онтологический закон исключённого третьего, открывая новые горизонты.
+    Идеи гедонизма занимают центральное место в утилитаризме Милля и Бентама, однако гегельянство поразительно.
+    Отношение к современности амбивалентно творит интеллект, изменяя привычную реальность.
+</div>
+</body>
+</html>
