@@ -1,0 +1,20 @@
+1. Вывести отзыв
+GET - /reviews
+
+2. Добавить отзыв
+POST - /reviews
+{ "name": "Vasya Pupkin", "message": "Все плохо", "rate: 5, "approved": 0 }
+
+3. Одобрить отзыв
+PATCH /reviews/<id>
+{ "approved": 1 }
+
+4.Удалить отзыв
+DELETE /reviews/<id>
+
+
+C - Create  - POST
+R - Read    - GET
+U - Update  - PATCH,PUT
+D - Delete  - DELETE
+-----------------------------

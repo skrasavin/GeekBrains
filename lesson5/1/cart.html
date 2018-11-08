@@ -1,0 +1,103 @@
+<html>
+  <head>
+    <title>jQuery</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+
+        function addData() {
+            $("#buttonAdd")
+                .attr('data-rate', $("#rate").val() )
+                .attr('data-message', $("#text").val() )
+                .attr('data-name', $("#name").val() )
+        }
+
+        (function ($) {
+            $(function () {
+
+                $("#buttonAdd").click(function () {
+                    addData();
+                    var review = $(this).data();
+                    $.ajax({
+                        url:"http://localhost:3000/reviews",
+                        type: 'POST',
+                        data: review,
+                        success: function(rev) {
+                            alert("SUCCESS");
+                            $('#blockForShowReviews').empty();
+                        }
+                    })
+                });
+
+
+                $("#buttonShow").click(function () {
+                    $.ajax({
+                        url:"http://localhost:3000/reviews",
+                        type: 'GET',
+                        success: function(review) {
+                            $('#blockForShowReviews').empty();
+                            review.forEach(function (rev) {
+                                var $button = $('<button />', {
+                                    text: 'Remove',
+                                    class: 'remove',
+                                    'data-id': rev.id,
+                                    'data-name': rev.name,
+                                    'data-message': rev.message,
+                                    'data-rate': rev.rate,
+                                });
+                                $("#blockForShowReviews").append(rev.id+ ") "+ rev.message).append($button).append("<br>");
+                            });
+
+                            $("#buttonDelete").click(function () {
+                                var result = prompt("Enter number to delete");
+                                $.ajax({
+                                    url: "http://localhost:3000/reviews/" + result,
+                                    type: 'DELETE',
+                                    success: function () {
+                                        $("#blockForShowReviews").empty();
+                                        alert("Delete COMPLETE")
+                                    }
+                                })
+                            })
+
+
+//                            $('#blockForShowReviews .remove[data-id="' + $(".remove").id + '"]').click(function () {
+//                                var review = $(this).data();
+//                                $.ajax({
+//                                    url: "http://localhost:3000/reviews/" + $(".remove").id,
+//                                    type: 'DELETE',
+//                                    data: review,
+//                                    success: function (rev) {
+//                                        $("#blockForShowReviews").empty();
+//                                        alert("Delete COMPLETE")
+//                                    }
+//                                });
+//                            });
+                        }
+                    })
+                })
+            })
+        })(jQuery);
+
+
+    </script>
+  </head>
+  <body>
+
+    <div class="review-panel">
+      <button id="buttonAdd" class="btn btnAdd">add review</button>
+      <button class="btn btnApprove">approve review</button>
+      <button id="buttonDelete" class="btn btnDelete">delete review</button>
+      <button id="buttonShow" class="btn btnShow">show all reviews</button>
+    </div>
+    <div class="review-panel-right">
+      <label for="name">Name</label>
+      <input id="name" placeholder="Enter your name" type="text">
+      <label for="rate">Rate</label>
+      <input id="rate" placeholder="Rate from 1 to 5" type="text">
+      <label id="messageId" >Message</label>
+      <textarea id="text" name="comment" cols="80" rows="8"></textarea></p>
+      <div id="blockForShowReviews"></div>
+    </div>
+  </body>
+</html>
