@@ -1,0 +1,45 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Menu</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="test.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+    <script>
+        var firstImg = {
+            id:1,
+            url:'url(picture/first.jpg)'
+        };
+        var secondImg = {
+            id:2,
+            url:'url(picture/second.jpg)'
+        };
+        var thirdImg = {
+            id:3,
+            url:'url(picture/third.jpg)'
+        };
+
+        $(document).ready(function () {
+
+            console.log($('.newPic').css('background-image'));
+
+            $(".left-position").click(function () {
+                $(".newPic").css('background-image', secondImg.url);
+            })
+
+
+
+        })
+
+    </script>
+</head>
+<body>
+<div class="left-position"></div>
+<div class="right-position"></div>
+<div class="newPic"></div>
+
+</body>
+</html>

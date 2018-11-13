@@ -1,0 +1,68 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Menu</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="test.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+    <script>
+        $( function() {
+
+            // There's the gallery and the trash
+            var $gallery = $( "#gallery" ),
+                $trash = $( "#trash" );
+
+            // Let the gallery items be draggable
+            $( "li", $gallery ).draggable({
+                cancel: "a.ui-icon", // clicking an icon won't initiate dragging
+                revert: "invalid", // when not dropped, the item will revert back to its initial position
+                containment: "document",
+                helper: "clone",
+                cursor: "move"
+            });
+
+            // Let the trash be droppable, accepting the gallery items
+            $trash.droppable({
+                accept: "#gallery > li",
+                classes: {
+                    "ui-droppable-active": "ui-state-highlight"
+                },
+                drop: function( event, ui ) {
+                    deleteImage( ui.draggable );
+                }
+            });
+
+
+            // Image deletion function
+            function deleteImage( $item ) {
+                $item.fadeOut()
+            }
+
+
+        } );
+
+    </script>
+</head>
+<body>
+
+<div class="ui-widget ui-helper-clearfix">
+
+    <ul id="gallery" class="gallery ui-helper-reset ui-helper-clearfix">
+        <li class="mersImg ui-corner-tr"></li>
+        <li class="buickImg ui-corner-tr"></li>
+        <li class="sportImg ui-corner-tr"></li>
+        <li class="camaroImg ui-corner-tr"></li>
+    </ul>
+
+    <div id="trash" class="ui-widget-content ui-state-default">
+        <h4 class="cart">Cart</h4>
+    </div>
+
+</div>
+
+
+</body>
+</html>

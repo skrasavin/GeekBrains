@@ -1,0 +1,40 @@
+#gallery { float: left; width: 65%; min-height: 12em; }
+.gallery li { float: left; width: 87px; padding: 0.4em; margin: 0 0.4em 0.4em 0; text-align: center; }
+
+.mersImg {
+    width: 87px;
+    height: 120px;
+    background-image: url("pictures/mers.jpg");
+}
+.buickImg {
+    height: 120px;
+    background-image: url("pictures/buick.jpg");
+}
+.sportImg {
+    height: 120px;
+    background-image: url("pictures/sport-car.jpg");
+}
+.camaroImg {
+    height: 120px;
+    background-image: url("pictures/camaro.jpg");
+}
+.ui-widget-content {
+    background: midnightblue;
+}
+#trash {
+    float: right;
+    padding: 1%;
+    position: absolute;
+    width: 275px;
+    height: 180px;
+    left: 700px;
+    background: green;
+    background-image: url("pictures/cart.jpg");
+    background-size: 300px 220px;
+}
+.cart {
+    font-size: 30px;
+    margin-top: 150px;
+    color: black;
+    font-family: cursive;
+}

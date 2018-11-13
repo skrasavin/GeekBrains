@@ -1,0 +1,24 @@
+.newPic{
+    margin: 0 auto;
+    width: 580px;
+    height: 240px;
+    background-image: url("picture/first.jpg")
+}
+.left-position {
+    position: absolute;
+    left: 353px;
+    top: 100px;
+    background-image: url("picture/left.png");
+    background-position: 84px;
+    width: 40px;
+    height: 50px;
+}
+.right-position {
+    position: absolute;
+    left: 973px;
+    top: 100px;
+    background-image: url("picture/right.png");
+    background-position: 84px;
+    width: 40px;
+    height: 50px;
+}

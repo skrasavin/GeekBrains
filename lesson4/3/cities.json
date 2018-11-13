@@ -1,0 +1,24 @@
+{
+  "cities": [
+    {
+      "id": 1,
+      "name": "Moscow"
+    },
+    {
+      "id": 2,
+      "name": "Sankt petersburg"
+    },
+    {
+      "id": 3,
+      "name": "Novosibirsk"
+    },
+    {
+      "id": 4,
+      "name": "Smolensk"
+    },
+    {
+      "id": 5,
+      "name": "Tula"
+    }
+  ]
+}

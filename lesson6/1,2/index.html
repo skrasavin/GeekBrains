@@ -1,0 +1,59 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Menu</title>
+    <script src="test.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $("#datepicker").datepicker({
+                dateFormat: 'dd.mm.yy',
+                monthNames: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь',
+                    'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
+                dayNamesMin: ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс']
+            });
+
+        })
+
+    </script>
+</head>
+<body>
+<label for="name">Name</label>
+<input id="name" placeholder="Введите имя"><span title="Name error" class="errorT" id="errorText"></span>
+<p id="dp">Date: <input type="text" id="datepicker"></p>
+<br><br>
+<label for="phone">Phone number</label>
+<input id="phone" placeholder="+7(000)000-0000"><span title="Phone error" id="errorTextPhone"></span>
+<br><br>
+<label for="email">E-mail</label>
+<input id="email" placeholder="my.mail@mail.ru"><span  title="Email error" id="errorTextEmail"></span>
+<br><br>
+<label for="message">Message</label><br>
+<input size="100" maxlength="80" id="message" placeholder="Введите текст"><span id="errorTextMessage"></span>
+<br><br>
+<label for="email">City</label>
+<input id="city" placeholder="Введите ваш город"><span id="errorTextCity"></span>
+<br><br>
+<button id="button">BUTTON</button>
+
+
+<style>
+    .helper {
+        position: absolute;
+        left: 208px;
+        top: 168px;
+        list-style-type: none;
+    }
+    #dp {
+        position: absolute;
+        margin: -21px 249px;
+    }
+    .ui-dialog {
+        text-align: center;
+    }
+</style>
+</body>
+</html>
